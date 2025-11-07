@@ -74,7 +74,7 @@ def start():
     browser.get('https://pass.hust.edu.cn/cas/login?service=https%3A%2F%2Fpecg.hust.edu.cn%2Fcggl%2Findex1')
     while True:
         # 加载文件
-        load_dotenv('配置文件.env')
+        load_dotenv('个人信息.env')
         # 智慧华中大登录
         input_name = WebDriverWait(browser,10).until(EC.presence_of_element_located((By.XPATH,'//*[@id="un"]')))
         input_name.send_keys(os.getenv('account'))
@@ -455,5 +455,6 @@ class Schedule:
             scenes()
         except Exception as e:
             print(e)
+
 
 app = Schedule()
